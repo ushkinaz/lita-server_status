@@ -2,3 +2,7 @@ en:
   lita:
     handlers:
       server_status:
+        help:
+          usage: List out the current server statuses.
+        error:
+          no_data: I don't know what state the servers are in.

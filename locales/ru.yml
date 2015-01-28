@@ -1,0 +1,8 @@
+ru:
+  lita:
+    handlers:
+      server_status:
+        help:
+          usage: Текущий список серверов и их состояний.
+        error:
+          no_data: Я не знаю, в каком состоянии находятся сервера.

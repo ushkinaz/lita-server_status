@@ -5,7 +5,7 @@ module Lita
 
       route(MESSAGE_REGEX, :save_status)
       route(/server status/i, :list_statuses, command: true,
-            help: { "server status" => "List out the current server statuses." }
+            help: { t("command.server_status") => t("help.usage") }
       )
 
       def save_status(response)
@@ -24,7 +24,7 @@ module Lita
 
       def status_message
         messages = redis.keys("server_status*").sort.map { |key| redis.get(key) }
-        messages << "I don't know what state the servers are in." if messages.empty?
+        messages << t("error.no_data") if messages.empty?
         messages.join("\n")
       end
 
